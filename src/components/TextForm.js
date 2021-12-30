@@ -33,13 +33,13 @@ function TextForm(props) {
 <div className="mb-3">
   <textarea className="form-control" id="myBox" rows="8" value={text} onChange={handleOnChange} style={{backgroundColor:props.mode==='dark'?'#325885':'white',color:props.mode==='dark'?'white':'black'}}></textarea>
 </div>
-<button className='btn btn-primary mx-2' onClick={handleUpClick}>Convert to Uppercase</button>
-<button className='btn btn-primary mx-2' onClick={handleLowClick}>Convert to Lowercase</button>
-<button className='btn btn-primary mx-2' onClick={handleCopy}>Copy Text</button>
+<button className='btn btn-primary mx-2 my-1' onClick={handleUpClick}>Convert to Uppercase</button>
+<button className='btn btn-primary mx-2 my-1' onClick={handleLowClick}>Convert to Lowercase</button>
+<button className='btn btn-primary mx-2 my-1' onClick={handleCopy}>Copy Text</button>
         </div>
         <div className='container my-3'>
             <h3>Text Summary</h3>
-            <p className='text-sum'>{text.split(" ").length} words and {text.length} characters</p>
+            <p className='text-sum'>{text.split(" ").filter((element)=>{return element.length!==0}).length} words and {text.length} characters</p>
         </div>
         <div className='container my-3'>
             <h3>Preview Your Text</h3>
